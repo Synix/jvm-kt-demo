@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="jvm-kt-demo:test" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="kotlin-language" name="Kotlin">
+      <configuration version="2" platform="JVM 1.6" useProjectSettings="false">
+        <compilerSettings />
+        <compilerArguments>
+          <option name="destination" value="$MODULE_DIR$/../../build/kotlin-classes/test" />
+          <option name="classpath" value="$MODULE_DIR$/../../build/classes/main:/Users/fanghe/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.2-2/2b22828f027e103dcd45f3aa240338bfdb53d16b/kotlin-stdlib-1.1.2-2.jar:/Users/fanghe/.gradle/caches/modules-2/files-2.1/io.kotlintest/kotlintest/1.3.3/d886f4f32925069a228c0f6d75602d44d3e77c8/kotlintest-1.3.3.jar:/Users/fanghe/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar:/Users/fanghe/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.0.3/ed9cbaeb8dccd2027348185044012aac145a5c61/kotlin-reflect-1.0.3.jar:/Users/fanghe/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar:/Users/fanghe/.gradle/caches/modules-2/files-2.1/com.sksamuel.koors/koors/0.90.0/cbeea25c36a797332d74e7a95d3f1788c458a07b/koors-0.90.0.jar:/Users/fanghe/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/1.10.19/e8546f5bef4e061d8dd73895b4e8f40e3fe6effe/mockito-core-1.10.19.jar:/Users/fanghe/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar:/Users/fanghe/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/2.1/87c0ea803b69252868d09308b4618f766f135a96/objenesis-2.1.jar:/Users/fanghe/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar" />
+          <option name="noStdlib" value="true" />
+          <option name="noReflect" value="true" />
+          <option name="moduleName" value="jvm-kt-demo_main" />
+          <option name="jvmTarget" value="1.6" />
+          <option name="addCompilerBuiltIns" value="true" />
+          <option name="loadBuiltInsFromDependencies" value="true" />
+          <option name="languageVersion" value="1.1" />
+          <option name="apiVersion" value="1.1" />
+          <option name="pluginClasspaths">
+            <array />
+          </option>
+          <option name="coroutinesWarn" value="true" />
+          <option name="pluginOptions">
+            <array />
+          </option>
+        </compilerArguments>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output-test url="file://$MODULE_DIR$/../../build/classes/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/kotlin" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/test/resources" type="java-test-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="jvm-kt-demo_main" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.1.2-2" level="project" />
+    <orderEntry type="library" name="Gradle: io.kotlintest:kotlintest:1.3.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.guava:guava:18.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.sksamuel.koors:koors:0.90.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.mockito:mockito-core:1.10.19" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.objenesis:objenesis:2.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="jvm-kt-demo_main" />
+</module>
