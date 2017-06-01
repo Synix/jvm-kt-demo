@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/jvm-kt-demo.iml" filepath="$PROJECT_DIR$/jvm-kt-demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jvm-kt-demo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jvm-kt-demo_main.iml" group="jvm-kt-demo" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jvm-kt-demo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jvm-kt-demo_test.iml" group="jvm-kt-demo" />
+      <module fileurl="file://$PROJECT_DIR$/jvm.kotlin.iml" filepath="$PROJECT_DIR$/jvm.kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jvm.kotlin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jvm.kotlin_main.iml" group="jvm.kotlin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jvm.kotlin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jvm.kotlin_test.iml" group="jvm.kotlin" />
     </modules>
   </component>
 </project>

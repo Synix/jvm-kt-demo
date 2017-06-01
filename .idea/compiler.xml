@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="jvm-kt-demo_main" target="1.8" />
       <module name="jvm-kt-demo_test" target="1.8" />
+      <module name="jvm.kotlin_main" target="1.8" />
+      <module name="jvm.kotlin_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

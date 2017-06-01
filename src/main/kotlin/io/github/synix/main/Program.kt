@@ -3,6 +3,7 @@ package io.github.synix.main
 import com.xenomachina.argparser.ArgParser
 import com.xenomachina.argparser.default
 import com.xenomachina.argparser.mainBody
+import io.github.synix.classfile.ClassFile
 import io.github.synix.classpath.Classpath
 
 
@@ -31,26 +32,28 @@ class Cmd(parser: ArgParser) {
 
 
 fun startJVM(cmd: Cmd) {
-    val cp = Classpath.parse(cmd.XjreOption, cmd.cpOption)
+    val classpath = Classpath.parse(cmd.XjreOption, cmd.cpOption)
 
-    println("cp: $cp \n" +
+    println("cp: $classpath \n" +
             "class: ${cmd.clazz} \n" +
             "args: ${cmd.args}")
 
 
     val className = cmd.clazz.replace(".", "/")
-    val readResult = cp.readClass(className)
+
+    val readResult = classpath.readClass(className)
 
     if (readResult == null || readResult.bytes == null) {
-        println("Could not find or load main class ${cmd.clazz}")
+        println("Could not find or load main class $className")
     } else {
-        println("class data:\n" +
-                readResult.bytes.toHex())
+        // println("class data:\n" + readResult.bytes.toHex())
+        val classFile = ClassFile.parse(readResult.bytes)
+        println(classFile)
     }
 }
 
 
-fun main(args: Array<String>) = mainBody("java -jar ./build/libs/jvm-kt-demo.jar") {
+fun main(args: Array<String>) = mainBody("java -jar ./build/libs/jvm.kotlin.jar") {
     Cmd(ArgParser(args)).run {
         startJVM(this)
     }
