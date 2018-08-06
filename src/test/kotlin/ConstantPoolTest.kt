@@ -2,12 +2,11 @@ import io.github.synix.classfile.ClassReader
 import io.github.synix.classfile.ConstantMethodrefInfo
 import io.github.synix.classfile.ConstantPool
 import io.github.synix.classfile.ConstantUtf8Info
-import io.kotlintest.matchers.shouldBe
-import io.kotlintest.matchers.shouldEqual
+import io.kotlintest.shouldBe
 import io.kotlintest.specs.FunSpec
 
 class ConstantPoolTest: FunSpec() {
-    fun String.hexStringToByteArray(): ByteArray {
+    private fun String.hexStringToByteArray(): ByteArray {
         val len = this.length
         val data = ByteArray(len / 2)
         var i = 0
@@ -26,8 +25,8 @@ class ConstantPoolTest: FunSpec() {
             (constantInfo is ConstantMethodrefInfo) shouldBe true
 
             if (constantInfo is ConstantMethodrefInfo) {
-                constantInfo.classIndex shouldEqual 6
-                constantInfo.nameAndTypeIndex shouldEqual 49
+                constantInfo.classIndex shouldBe  6
+                constantInfo.nameAndTypeIndex shouldBe 49
             }
         }
 
@@ -38,7 +37,7 @@ class ConstantPoolTest: FunSpec() {
             (constantInfo is ConstantUtf8Info) shouldBe true
 
             if (constantInfo is ConstantUtf8Info) {
-                constantInfo.str shouldEqual "FLAG"
+                constantInfo.str shouldBe "FLAG"
             }
         }
     }

@@ -1,6 +1,5 @@
 import io.github.synix.classfile.ClassFile
-import io.kotlintest.matchers.shouldBe
-import io.kotlintest.matchers.shouldEqual
+import io.kotlintest.shouldBe
 import io.kotlintest.specs.FunSpec
 import java.io.File
 import java.nio.file.Files
@@ -18,11 +17,11 @@ class ClassReaderTest : FunSpec() {
             parsedClassFile.majorVersion shouldBe 52
             parsedClassFile.minorVersion shouldBe 0
 
-            parsedClassFile.constantPool.constantInfos.size shouldEqual 64
+            parsedClassFile.constantPool.constantInfos.size shouldBe 64
 
             parsedClassFile.accessFlags shouldBe 0x0021
-            parsedClassFile.className shouldEqual "io/github/synix/test/ClassFileSample"
-            parsedClassFile.superClassName shouldEqual "java/lang/Object"
+            parsedClassFile.className shouldBe "io/github/synix/test/ClassFileSample"
+            parsedClassFile.superClassName shouldBe "java/lang/Object"
 
             parsedClassFile.interfaceNames?.size shouldBe 0
             parsedClassFile.fields?.size shouldBe 8

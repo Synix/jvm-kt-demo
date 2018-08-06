@@ -8,6 +8,8 @@ import io.github.synix.classpath.Classpath
 
 
 private val HEX_CHARS = "0123456789ABCDEF".toCharArray()
+private const val PROG_NAME: String = "JVM.Kt"
+
 
 internal fun ByteArray.toHex() : String{
     val result = StringBuffer()
@@ -23,10 +25,13 @@ internal fun ByteArray.toHex() : String{
     return result.toString()
 }
 
+
 class Cmd(parser: ArgParser) {
-    val cpOption by parser.storing("--classpath", help = "classpath").default(".")
+    val helpFlag by parser.flagging("-H", help = "print help message")
+    val versionFlag by parser.flagging("-V", help = "print version and exit")
+    val cpOption by parser.storing("--cp", "--classpath", help = "classpath").default(".")
     val XjreOption by parser.storing("--Xjre", help = "path to jre").default(null)   // bootstrap and ext path(jre/lib..)
-    val clazz by parser.positional("CLASS", help = "source class file")
+    val clazz by parser.positional("CLASS", help = "source class file").default("")
     val args by parser.positionalList("ARGS", help = "arguments", sizeRange = 1..Int.MAX_VALUE).default(null)
 }
 
@@ -43,7 +48,7 @@ fun startJVM(cmd: Cmd) {
 
     val readResult = classpath.readClass(className)
 
-    if (readResult == null || readResult.bytes == null) {
+    if (readResult?.bytes == null) {
         println("Could not find or load main class $className")
     } else {
         // println("class data:\n" + readResult.bytes.toHex())
@@ -53,8 +58,18 @@ fun startJVM(cmd: Cmd) {
 }
 
 
-fun main(args: Array<String>) = mainBody("java -jar ./build/libs/jvm.kotlin.jar") {
+fun main(args: Array<String>) = mainBody(PROG_NAME) {
     Cmd(ArgParser(args)).run {
-        startJVM(this)
+        when {
+            this.helpFlag ->
+                println("Usage: kotlin -jar build/libs/jvm.kotlin.jar [-options] class [args...]")
+            this.versionFlag ->
+                println("version 0.0.1")
+            else -> {
+                println("cp: ${this.cpOption}, class: ${this.clazz}, args: ${this.args}")
+                startJVM(this)
+            }
+        }
     }
 }
+

@@ -12,7 +12,7 @@ class Classpath private constructor(jreOption: String?, cpOption: String) {
     }
 
     fun readClass(className: String): ReadClassResult? {
-        val classNameWithExt = "${className}.class"
+        val classNameWithExt = "$className.class"
 
         return listOf(this.bootClassPath.readClass(classNameWithExt),
                 this.extClassPath.readClass(classNameWithExt),
@@ -32,6 +32,7 @@ class Classpath private constructor(jreOption: String?, cpOption: String) {
     lateinit var userClassPath: Entry
 
     private fun parseBootAndExtClasspath(jreOption: String?) {
+        // jer/
         val jreDir = getJreDir(jreOption)
         // jre/lib/*
         val jreLibPath = Paths.get(jreDir, "lib", "*").toString()
@@ -53,8 +54,10 @@ class Classpath private constructor(jreOption: String?, cpOption: String) {
             return "./jre"
         }
 
-        val javaHome = System.getenv("JAVA_HOME")
-        if (javaHome.isNotEmpty()) {
+        val javaHome: String? = System.getenv("JAVA_HOME")
+        if (javaHome.isNullOrBlank()) {
+            System.err.println("JAVA_HOME not set, please check your environment variables")
+        } else {
             return Paths.get(javaHome, "jre").toString()
         }
 

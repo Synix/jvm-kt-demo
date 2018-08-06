@@ -1,8 +1,7 @@
 import io.github.synix.rtda.LocalVars
 import io.github.synix.rtda.OperandStack
 import io.kotlintest.matchers.plusOrMinus
-import io.kotlintest.matchers.shouldBe
-import io.kotlintest.matchers.shouldEqual
+import io.kotlintest.shouldBe
 import io.kotlintest.specs.FunSpec
 
 class RuntimeDataAreaTest: FunSpec() {
@@ -17,10 +16,10 @@ class RuntimeDataAreaTest: FunSpec() {
             vars.setDouble(7, 2.71828182845)
             vars.setRef(9, null)
 
-            vars.getInt(0) shouldEqual 100
-            vars.getInt(1) shouldEqual -100
-            vars.getLong(2) shouldEqual 2997924580
-            vars.getLong(4) shouldEqual -2997924580
+            vars.getInt(0) shouldBe 100
+            vars.getInt(1) shouldBe -100
+            vars.getLong(2) shouldBe 2997924580
+            vars.getLong(4) shouldBe -2997924580
             vars.getFloat(6) shouldBe 3.1415926f
             vars.getDouble(7) shouldBe 2.71828182845.plusOrMinus(0.0001)
             vars.getRef(9) shouldBe null
@@ -39,10 +38,10 @@ class RuntimeDataAreaTest: FunSpec() {
             operandStack.popRef() shouldBe null
             operandStack.popDouble() shouldBe 2.71828182845.plusOrMinus(0.0001)
             operandStack.popFloat() shouldBe 3.1415926f
-            operandStack.popLong() shouldEqual -2997924580
-            operandStack.popLong() shouldEqual 2997924580
-            operandStack.popInt() shouldEqual -100
-            operandStack.popInt() shouldEqual 100
+            operandStack.popLong() shouldBe -2997924580
+            operandStack.popLong() shouldBe 2997924580
+            operandStack.popInt() shouldBe -100
+            operandStack.popInt() shouldBe 100
         }
     }
 }

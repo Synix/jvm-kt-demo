@@ -7,7 +7,7 @@
  */
 
 buildscript {
-    ext.kotlin_version = '1.1.2-2'
+    ext.kotlin_version = '1.2.60'
     ext.kotlin_argparser_version = '2.0.1'
 
     repositories {
@@ -42,8 +42,22 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    testCompile 'io.kotlintest:kotlintest:2.0.0'
+    testCompile 'io.kotlintest:kotlintest-runner-junit5:3.1.8'
 
     compile "com.xenomachina:kotlin-argparser:$kotlin_argparser_version"
 }
 
+test {
+    useJUnitPlatform()
+
+    // show standard out and standard error of the test JVM(s) on the console
+    testLogging.showStandardStreams = true
+
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED", "STANDARD_OUT", "STANDARD_ERROR"
+    }
+
+    // support tag group in kotlintest
+    systemProperty "kotlintest.tags.include", System.getProperty("kotlintest.tags.include")
+    systemProperty "kotlintest.tags.exclude", System.getProperty("kotlintest.tags.exclude")
+}
